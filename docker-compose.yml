@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  broker:
+    image: rabbitmq:3.11.2-management
+    hostname: broker
+    ports:
+      - 1883:1883
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./broker/config/enabled_plugins:/etc/rabbitmq/enabled_plugins:ro
+      - ./broker/config/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+      - ./broker/config/conf.d:/etc/rabbitmq/conf.d/      
+      - ./broker/config/definitions.json:/etc/rabbitmq/definitions.json:ro
+      - broker-data:/var/lib/rabbitmq/
+      - broker-logs:/var/log/rabbitmq/
+
+volumes:
+  broker-data:
+  broker-logs:
