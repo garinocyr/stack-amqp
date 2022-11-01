@@ -2,13 +2,27 @@
     "users": [
       {
         "name": "admin",
-        "password_hash": "wjMMyuRyUZeppyvKgZS4FZOD0x7U6JnSQKzr8MNe5cQFfGBb",
+        "password_hash": "KQGJw8q0PcRdYu4d3bQeXahmd+oPTC+TZl/d88IHJQ1uGswr",
         "hashing_algorithm": "rabbit_password_hashing_sha256",
         "tags": [
           "administrator"
         ],
         "limits": {}
-      }      
+      },
+      {
+        "name": "producer_user",
+        "password_hash": "s/s73UCt8jh5/hfS5DYf3B/itjtvSIGHnj+KHDPFHAW36zhl",
+        "hashing_algorithm": "rabbit_password_hashing_sha256",
+        "tags": [],
+        "limits": {}
+      },
+      {
+        "name": "consumer_user",
+        "password_hash": "xjizjxToWpD4uiXThbakboJ06hHUEjzoCmm2KnOf0f+V94so",
+        "hashing_algorithm": "rabbit_password_hashing_sha256",
+        "tags": [],
+        "limits": {}
+      }
     ],
     "vhosts": [
       {
@@ -22,7 +36,21 @@
         "configure": ".*",
         "write": ".*",
         "read": ".*"
-      }      
+      },
+      {
+        "user": "producer_user",
+        "vhost": "/",
+        "configure": ".*",
+        "write": ".*",
+        "read": ".*"
+      },
+      {
+        "user": "consumer_user",
+        "vhost": "/",
+        "configure": ".*",
+        "write": ".*",
+        "read": ".*"
+      }
     ],
     "topic_permissions": [],
     "parameters": [],
