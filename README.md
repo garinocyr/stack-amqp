@@ -6,16 +6,15 @@ Docker stack for AMQP purpose
 * Start the stack
   * From local git repository
 
-```console
-developer@host:~/.../stack-amqp$ docker-compose up -d
+```sh
+developer@host:~/.../stack-amqp$ podman-compose up -d
 ```
 
 * Stop the stack
   * From local git repository
 
-```console
-developer@host:~/.../stack-amqp$ docker-compose down
+```sh
+developer@host:~/.../stack-amqp$ podman-compose down
 ```
 
 ### Notes
-
